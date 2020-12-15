@@ -14,6 +14,7 @@ The actual image archives are stored on the Internet Archive's [Wayback Machine]
 
 ### Q: "That's my art! Can I get credit?"
 A: Absolutely. Ideally, I would have loved to give the artists showcased on this account updated credit, that links to their currently active accounts alongside the post. But unfortunately, given the age of the Miiverse posts, alongside the sheer volume of posts the bot is given, the only credit that could be given was the data associated with the post (username, date, community, etc.). But of course, if you recognize your own work, or if a user knows the current artist's social media, I would love to provide that alongside the post! If you created a work posted by this bot, or know who created a work posted by this bot, please DM the bot, ideally with verification, so that proper credit can be given.
+
 Similarly, if you created a work, and want me to delete a post, or edit the credits given (like if, for example, the username provided includes your deadname), DM me the post, alongside verification that you are the artist, and I'd be more than willing to delete/edit the post, no questions asked.
 
 ### Q: "Can I suggest a post to be featured by the account?"
