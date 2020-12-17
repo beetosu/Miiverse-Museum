@@ -21,3 +21,20 @@ def get_posts(cur):
         #add everything to our list, except for "Posted", which is only needed for the sake of line 22
         posts.append(list(post)[:5])
     return posts
+
+# this is me taking the original db (which is ~1Gb) and making a smaller db
+# atm, it will take 20,000 random posts (which if 4 drawings are posted to twitter a day, is >13 years worth)
+def partition_db():
+    bigConn = sqlite3.connect('miiverse.db')
+    bigCur = bigConn.cursor()
+
+    smallConn = sqlite3.connect('miiverse-small.db')
+    smallCur = smallConn.cursor()
+    
+    smallCur.execute("CREATE TABLE Posts (Id, Community, Image, User, Timestamp, Posted);")
+    sample = bigCur.execute("SELECT * FROM Posts WHERE Posted=0 ORDER BY RANDOM() LIMIT 20000")
+    for i in sample:
+        smallCur.execute("INSERT INTO Posts VALUES (?, ?, ?, ?, ?, ?) ", i)
+    smallConn.commit()
+    smallConn.close()
+    bigConn.close()
