@@ -16,14 +16,14 @@ def get_posts(cur):
     posts = []
 
     #get a random assortment of drawings that have not already been posted
-    gallery = cur.execute("SELECT * FROM Posts WHERE Posted=0 ORDER BY RANDOM() LIMIT 10")
+    gallery = cur.execute("SELECT * FROM Posts WHERE Posted=0")
     for post in gallery:
-        #add everything to our list, except for "Posted", which is only needed for the sake of line 22
+        #add everything to our list, except for "Posted", which is only needed for the sake of line 19
         posts.append(list(post)[:5])
     return posts
 
 # this is me taking the original db (which is ~1Gb) and making a smaller db
-# atm, it will take 20,000 random posts (which if 4 drawings are posted to twitter a day, is >13 years worth)
+# atm, it will take 20,000 random posts (which if 4 drawings are posted to twitter a day, is >9 years worth)
 def partition_db():
     bigConn = sqlite3.connect('miiverse.db')
     bigCur = bigConn.cursor()

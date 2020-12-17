@@ -1,3 +1,4 @@
 miiverse.db
-apikey.txt
 __pycache__
+secrets.py
+drawing.png
