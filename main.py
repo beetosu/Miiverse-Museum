@@ -21,6 +21,7 @@ def main():
     while currentHour.hour % 4 != 0:
         currentHour += timedelta(hours=1)
     currentHour += timedelta(hours=5)
+    print((currentHour - datetime.now()).total_seconds())
     time.sleep((currentHour - datetime.now()).total_seconds())
 
     #for every post, get the needed data, format it into a tweet,
@@ -30,12 +31,15 @@ def main():
         post = posts.pop(0)
         body = compose.create_tweet_text(post)
         postedDrawing = drawing.get_drawing(post[2])
+        print(body)
         postedDrawing.save("drawing.png")
         api.update_with_media("drawing.png", status=body)
         cur.execute("UPDATE Posts SET Posted=1 WHERE Id='"+post[0]+"'")
         conn.commit()
+        print(post[2])
         end = time.time()
         durationTime = end - start
+        print(14400 - durationTime)
         time.sleep(14400 - durationTime)
     conn.close()
 
