@@ -16,11 +16,10 @@ def main():
     api = tweepy.API(auth)
 
     #wait for the first interval (12a, 4a, 8a, etc. in EST)
-    currentHour = datetime.now().replace(second=0, microsecond=0, minute=0) - timedelta(hours=5)
+    currentHour = datetime.now().replace(second=0, microsecond=0, minute=0)
     currentHour += timedelta(hours=1)
     while currentHour.hour % 4 != 0:
         currentHour += timedelta(hours=1)
-    currentHour += timedelta(hours=5)
     print((currentHour - datetime.now()).total_seconds())
     time.sleep((currentHour - datetime.now()).total_seconds())
 
