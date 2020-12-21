@@ -28,9 +28,11 @@ def main():
     while len(posts) > 0:
         start = time.time()
         post = posts.pop(0)
-        body = compose.create_tweet_text(post)
-        postedDrawing = drawing.get_drawing(post[2])
-        print(body)
+        postedDrawing = None
+        while postedDrawing == None:
+            body = compose.create_tweet_text(post)
+            postedDrawing = drawing.get_drawing(post[2])
+            print(body)
         postedDrawing.save("drawing.png")
         api.update_with_media("drawing.png", status=body)
         cur.execute("UPDATE Posts SET Posted=1 WHERE Id='"+post[0]+"'")
