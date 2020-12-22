@@ -31,7 +31,10 @@ def main():
         postedDrawing = None
         while postedDrawing == None:
             body = compose.create_tweet_text(post)
-            postedDrawing = drawing.get_drawing(post[2])
+            try:
+                postedDrawing = drawing.get_drawing(post[2])
+            except:
+                print(post[2], "not found!")
             print(body)
         postedDrawing.save("drawing.png")
         api.update_with_media("drawing.png", status=body)
