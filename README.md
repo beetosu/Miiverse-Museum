@@ -1,6 +1,6 @@
 # Miiverse-Museum
 
-This will be a twitter bot, dedicated to showcasing random drawings from "Miiverse", a social media site for Nintendo 3DS/WiiU owners that has been discontinued since 2017.
+This is a twitter bot, dedicated to showcasing random drawings from "Miiverse", a social media site for Nintendo 3DS/WiiU owners that has been discontinued since 2017.
 
 ## ACKNOWLEDGEMENTS
 
